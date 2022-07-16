@@ -6,6 +6,23 @@ import './Global.css'
 import styles from './App.module.css'
 
 
+const post = [
+    {
+      id:1,
+      author:{
+              avatarUrl:'https://github.com/CarlosEduardoDeev.png',
+              name:'Carlos Eduardo ',
+              role: 'Developer'
+              },
+      content:[
+            'Fala galeraa 👋 ',
+            'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'
+    
+
+      ]
+    },
+]
+
 export function App() {
   
 

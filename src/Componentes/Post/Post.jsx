@@ -2,6 +2,9 @@ import style from './Post.module.css';
 import { Comment } from '../Comment/Comment';
 import { Avatar } from '../Avatar/Avatar';
 
+
+//author: {avatar}
+
 export function Post(){
     return(
         <article className={style.post}>
