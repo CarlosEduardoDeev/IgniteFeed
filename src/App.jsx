@@ -6,7 +6,7 @@ import './Global.css'
 import styles from './App.module.css'
 
 
-const post = [
+const posts = [
     {
       id:1,
       author:{
@@ -15,16 +15,31 @@ const post = [
               role: 'Developer'
               },
       content:[
-            'Fala galeraa 👋 ',
-            'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'
-    
-
-      ]
+        {type: 'paragraph',content: 'Fala galeraa 👋 '},
+        {type: 'paragraph',content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+        {type:'link', content: 'jane.design/doctorcare'},
+            ],
+      publishedAt: new Date('2022-07-06 20:00:00'),
+    },
+    {
+      id:2,
+      author:{
+              avatarUrl:'https://github.com/maykbrito.png',
+              name:'Mayk Brito ',
+              role: 'Educator'
+              },
+      content:[
+        {type: 'paragraph',content: 'Fala galeraa 👋 '},
+        {type: 'paragraph',content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+        {type:'link', content: 'jane.design/doctorcare'},
+            ],
+      publishedAt: new Date('2022-07-08 20:00:00'),
     },
 ]
 
 export function App() {
   
+  //iteração
 
   return (
     <div>
@@ -32,17 +47,16 @@ export function App() {
      <div className={styles.wrapper}>
       <Sidebar/>
         <main>
-        <Post
-          author="Carlos Eduardo "
-          content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        />
-        <Post
-          author="Maiara"
-          content="Linda"
-      
-        />
-      
-
+          {posts.map(post =>{
+            return( 
+            <Post
+            key={post.id}
+            author={post.author}
+            content={post.content}
+            publishedAt={post.publishedAt}
+            />
+            )
+          })}
         </main>
      </div>
     </div>
